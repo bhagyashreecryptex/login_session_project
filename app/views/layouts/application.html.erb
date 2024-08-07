@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SessionApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'eload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'eload' %>
+</head>
+
+<body>
+  <% if current_user %>
+    <p style="color: red;">Welcome, <%= current_user.email %></p>
+   <%= button_to "Logout", destroy_session_path, method: :delete, data: { turbolinks: "false" } %>
+  <% else %>
+  <% end %>
+  <%= yield %>
+</body>
+</html>

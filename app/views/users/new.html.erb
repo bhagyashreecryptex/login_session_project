@@ -1,0 +1,24 @@
+<% if flash[:notice]%>
+<p class="flash-notice"><%= flash[:notice] %></p>
+<%end%>
+<div id="new-user">
+<h1>Register</h1>
+
+<%= form_for (@user) do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: "Enter Name" %><br>
+
+  <%= form.label :email %>
+  <%= form.text_field :email, placeholder: "Enter Email" %><br>
+
+  <%= form.label :password %>
+  <%= form.password_field :password, placeholder: "Enter password" %><br>
+
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation , placeholder: "Enter Confirm password"%><br>
+
+  <%= form.submit %>
+<% end %><br>
+<p id="new-login"><%= link_to "Login", new_session_path %></p>
+</div>
+

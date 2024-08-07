@@ -1,0 +1,10 @@
+<h1>User Information</h1>
+<ul>
+<li><strong>ID:</strong> <%= session[:user_id] %></li>
+<li><strong>Name:</strong> <%= session[:user_name] %></li>
+<li><strong>Email:</strong> <%= session[:user_email] %></li>
+<li><strong>Date_Of_Birth:</strong> <%= session[:date_of_birth] %></li>
+</ul>
+
+<%= link_to "Update User", edit_user_path(@user)%>
+
